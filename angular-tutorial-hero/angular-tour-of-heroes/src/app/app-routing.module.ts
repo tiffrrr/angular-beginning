@@ -12,6 +12,8 @@ const routes: Routes = [
   // 預設路徑，不然沒東西
   { path: 'heroes', component: HeroesComponent },
   { path: 'dashboard', component: DashboardComponent },
+  // :id 會把在<a [routerLink]="['/hero', hero.id]">寫的變數（兩個參數，第一個路由，第二個變數），帶入:id的位置
+
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   // 任何與你配置中的路由都不匹配的路由都會使用這個路由。一定要放在最後一個。因為會從上往下找
