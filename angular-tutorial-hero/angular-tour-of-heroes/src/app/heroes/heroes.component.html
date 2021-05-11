@@ -7,8 +7,15 @@
   </label>
 </div>
  -->
-
-<h2>My Heroes</h2>
+ <h2>點選時換頁</h2>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
+  </li>
+</ul>
+<h2>點選時詳情出現在下方</h2>
 <ul class="heroes">
   <li
   *ngFor="let hero of heroes"
@@ -21,6 +28,7 @@
 </ul>
 
 
+
 <div *ngIf="selectedHero">
   <!-- 一開始selectedHero是undefined，所以需要ngIf -->
   <h2>{{selectedHero.name | uppercase}} Details</h2>
@@ -31,5 +39,6 @@
     </label>
   </div>
 </div>
+
 <!-- 將上面詳情這塊拉出去成元件 -->
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>

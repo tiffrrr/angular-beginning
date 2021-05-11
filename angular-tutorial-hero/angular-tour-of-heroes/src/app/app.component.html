@@ -1,4 +1,14 @@
 <h1>{{title}}</h1>
+<nav>
+  <!--選中的link，就會加上css‘activebutton’ -->
+  <a routerLink="/dashboard" routerLinkActive="activebutton">Dashboard</a>
+  <a routerLink="/heroes" routerLinkActive="activebutton">Heroes</a>
+</nav>
+<!-- 會告訴路由器要在哪裡顯示路由的檢視。
+  能在 AppComponent 中使用 RouterOutlet，是因為 AppModule 匯入了 AppRoutingModule，
+  而 AppRoutingModule 中匯出了 RouterModule。  -->
+<router-outlet> </router-outlet>
 <!-- 要用元件的時候： -->
-<app-heroes></app-heroes>
+<!-- <app-heroes></app-heroes> -->
+<app-messages></app-messages>
 
